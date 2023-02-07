@@ -1,1 +1,32 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block connect_statics %}
+<link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock connect_statics %}
+
+
+{% block main %}
+
+<div class="container-fluid d-flex justify-content-end" style="margin-top: 20px">
+    <p id="login">Войти</p>
+</div>
+
+<!--Главный заголовок-->
+<div class="container d-flex justify-content-center" style="margin-top:120px;">
+    <p id="big-title">FastJob</p>
+</div>
+
+<!--Найти работу-->
+<div class="container d-flex justify-content-center" style="margin-top:40px;">
+<form>
+    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+        <label for="search" class="visually-hidden">Найти работу</label>
+        <input id="search" type="text" class="form-control" placeholder="Найти работу" fdprocessedid="nm8pqq">
+        <button id="search-btn" class="btn" type="button" fdprocessedid="23gfx"><i class="bi bi-search"></i></button>
+    </div>
+</form>
+</div>
+
+{% endblock main %}
