@@ -12,7 +12,7 @@
 }
 
 .block-main {
-    min-height:1000px;
+
 }
 
 .header {
@@ -51,14 +51,22 @@
     color: #D9D9D9;
 }
 
-/*Кнопка войти*/
+/*Кнопка войти
 #login{
+    width: 450px;
     font-weight: 400;
     font-size: 20px;
     line-height: 43px;
-
+    cursor: pointer;
     color: #707070;
+}*/
+
+
+#login:hover{
+    color: #454545;
 }
+
+
 
 #big-title{
     font-weight: 400;
@@ -97,6 +105,16 @@
 
 #choose_city{
     margin-right: 10px;
+}
+
+
+#main-photo{
+    height: 200px;
+    margin-top: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 
