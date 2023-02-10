@@ -44,6 +44,7 @@ class CV(models.Model):
     about = models.TextField(blank=True)
     hobby = models.TextField(blank=True)
 
+
     type_cv = models.ForeignKey(CategoryCV, on_delete=models.CASCADE, null=True, )
 
     # Скрыты данные от пользователя на которые он не может повлиять
