@@ -1,18 +1,15 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
-# Create your views here.
-# def index(request):
-#     context = {
-#         'title': 'FastJob'
-#     }
-#     return render(request, 'main/index.html', context=context)
-
-
-class Home(TemplateView):
+class HomeCV(TemplateView):
+    template_name = 'main/index.html'
     extra_context = {
         'title': 'FastJob'
     }
-    template_name = 'main/index.html'
 
+
+class HomeEmployer(TemplateView):
+    template_name = 'main/index.html'
+    extra_context = {
+        'title': 'FastJob Ищем сотрудника'
+    }

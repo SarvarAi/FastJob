@@ -11,14 +11,26 @@
 <!--Навигационная панель-->
 <div class="container d-flex justify-content-center" style="margin-top: 20px">
     <a class="p-2 link-secondary navbar-brand" href="#">О нас</a>
-    <a class="p-2 link-secondary navbar-brand" href="#">Искать сотрудника</a>
+
+    {% if request.path == '/' %}
+    <a class="p-2 link-secondary navbar-brand" href="{% url 'employer' %}">Искать сотрудника</a>
+    {% elif request.path == '/employer/' %}
+    <a class="p-2 link-secondary navbar-brand" href="{% url 'employee' %}">Искать работу</a>
+    {% endif %}
+
     <a class="p-2 link-secondary navbar-brand" href="#">Помощь</a>
     <a class="p-2 link-secondary navbar-brand" href="#">Войти</a>
 </div>
 
 <!--Главный заголовок-->
 <div class="container d-flex justify-content-center" style="margin-top:220px;">
-    <p id="big-title">FastJob</p>
+    <p id="big-title">
+    {% if request.path == '/'%}
+        FastJob
+    {% elif '/employer/' %}
+        FastJob <p style="margin-top:40px; color:#4164DF;">ищем сотрудника</p>
+    {% endif %}
+    </p>
 </div>
 
 <!--Найти работу-->
@@ -26,7 +38,13 @@
     <form>
         <div class="d-flex flex-column flex-sm-row w-100 gap-2">
             <label for="search" class="visually-hidden">Найти работу</label>
-            <input id="search" type="text" class="form-control" placeholder="Найти работу" fdprocessedid="nm8pqq">
+
+            {% if request.path == '/'%}
+            <input id="search" type="text" class="form-control" placeholder="Искать работу" fdprocessedid="nm8pqq">
+            {% elif '/employer/' %}
+            <input id="search" type="text" class="form-control" placeholder="Искать сотрудника" fdprocessedid="nm8pqq">
+            {% endif %}
+
             <button id="search-btn" class="btn" type="button" fdprocessedid="23gfx"><i class="bi bi-search"></i>
             </button>
         </div>
@@ -35,8 +53,12 @@
 
 <!--Кнопки Вакансия -->
 <div class="container d-flex justify-content-center" style="margin-top: 40px;">
-    <button id="frilance" class="btn" type="button" fdprocessedid="23gfx">Фриланс</button>
-    <button id="vacancy" class="btn" type="button" fdprocessedid="23gfx">Вакансии</button>
+    <a href="#">
+        <button id="frilance" class="btn" type="button" fdprocessedid="23gfx">Фриланс</button>
+    </a>
+    <a href="#">
+        <button id="vacancy" class="btn" type="button" fdprocessedid="23gfx">Вакансии</button>
+    </a>
 </div>
 {% endblock main %}
 
