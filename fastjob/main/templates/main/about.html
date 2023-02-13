@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block connect_statics %}
+<link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock connect_statics %}
+
+{% block main %}
+
+<!--Навигационная панель-->
+<div class="container d-flex justify-content-center" style="margin-top: 20px">
+    <a class="p-2 link-secondary navbar-brand" href="{% url 'about' %}">О нас</a>
+
+    {% if request.path == '/' %}
+    <a class="p-2 link-secondary navbar-brand" href="{% url 'employer' %}">Искать сотрудника</a>
+    {% elif request.path == '/employer/' or request.path == '/about/' %}
+    <a class="p-2 link-secondary navbar-brand" href="{% url 'employee' %}">Искать работу</a>
+    {% endif %}
+
+    <a class="p-2 link-secondary navbar-brand" href="#">Помощь</a>
+    <a class="p-2 link-secondary navbar-brand" href="{% url 'login' %}">Войти</a>
+</div>
+
+<div class="container mt-5">
+    <h1>{{ title }}</h1>
+    <hr>
+    <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, dolor illum laudantium mollitia
+        praesentium voluptatibus voluptatum. Aliquid earum explicabo sint velit! Amet dicta dolorum earum et
+        exercitationem, explicabo ipsum iste minima nam neque, quam quidem. Accusamus alias blanditiis eaque expedita
+        nam non quam, quidem rem saepe vel. Dolores eius fuga modi nostrum porro, praesentium quam quasi, quidem
+        recusandae, reiciendis sed tempore ullam? Beatae, ducimus eaque enim id illo illum labore laboriosam maxime modi
+        omnis pariatur placeat quaerat quasi quidem recusandae reiciendis repellendus repudiandae sapiente soluta vitae.
+        Culpa, enim exercitationem facere fugiat ipsum magnam maxime minima, nemo tempore unde vel voluptatem?</p>
+</div>
+
+
+{% endblock main %}
