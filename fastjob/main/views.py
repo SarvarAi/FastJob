@@ -54,7 +54,7 @@ class UsersOperations:
             form = RegistrationForm(request.POST)
             if form.is_valid():
                 user = form.save()
-                return redirect('login')
+                return redirect('employee')
             else:
                 return redirect('register')
         else:
@@ -62,8 +62,13 @@ class UsersOperations:
 
         context = {
             'form': form,
-            'title': 'Регистрация'
+            'title': 'Регистрация',
+            'button': 'Зарегистрироваться',
+            'form_title': 'FastJob',
+            'help_text': 'Ecть аккунта?',
+            'help_link': 'Войти'
         }
+
         return render(request, 'main/register.html', context=context)
 
 
