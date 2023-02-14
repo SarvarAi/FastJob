@@ -34,7 +34,11 @@ class UsersOperations:
 
         context = {
             'form': form,
-            'title': 'Вход в аккаунт'
+            'title': 'Вход в аккаунт',
+            'button': 'Войти',
+            'form_title': 'FastJob',
+            'help_text': 'Нет аккунта?',
+            'help_link': 'Зарегистрироваться'
         }
 
         return render(request, 'main/login.html', context=context)

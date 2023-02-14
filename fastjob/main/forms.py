@@ -54,6 +54,10 @@ class RegistrationForm(UserCreationForm):
     }))
 
     class Meta:
+        """
+        Classifying Fields of Registration form
+        and also with the help of variable fields we are ordering them
+        """
         model = User
         fields = (
             'username',
